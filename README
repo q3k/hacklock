@@ -7,8 +7,12 @@ the IO expander and the PN532 are written in Lua.
 
 Files:
     hslockmk2/                       - this directory
-             /code.lua               - main Lua source code
-             /lua-libs/              - necessary Lua libraries
+             /main.lua               - main Lua script
+             /i2c.lua                - I2C functions
+             /nfc.lua                - NFC/PN532 functions
+             /auth.lua               - auth API functions
+
+             /lua-libs/              - other Lua libraries
                       /mips-bin/     - C libraries compiled for MIPS/OpenWRT
                       luai2c.tar.gz  - C i2c library
                       luasha2.tar.gz - C sha2 library
