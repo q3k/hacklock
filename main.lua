@@ -1,5 +1,3 @@
--- The MIT License (MIT)
--- 
 -- Copyright (c) 2013 Sergiusz 'q3k' Bazański <q3k@q3k.org>
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
