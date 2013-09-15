@@ -6,18 +6,18 @@ NFC tag reader. The I2C is software bit-banged by the kernel, drivers for both
 the IO expander and the PN532 are written in Lua.
 
 Files:
-    hslockmk2/                       - this directory
-             /main.lua               - main Lua script
-             /i2c.lua                - I2C functions
-             /nfc.lua                - NFC/PN532 functions
-             /auth.lua               - auth API functions
+    hslockmk2/                                    - this directory
+             software/
+                      main/                       - code for the central unit of the lock
+                           main.lua               - main Lua script
+                           lua-libs/              - other Lua libraries
+                                   mips-bin/      - C libraries compiled for MIPS/OpenWRT
+                                   luai2c.tar.gz  - C i2c library source
+                                   luasha2.tar.gz - C sha2 library source
 
-             /lua-libs/              - other Lua libraries
-                      /mips-bin/     - C libraries compiled for MIPS/OpenWRT
-                      luai2c.tar.gz  - C i2c library
-                      luasha2.tar.gz - C sha2 library
-                      JSON.lua       - JSON library
-                      bit.lua        - bitwise operations for Lua 5.1
+                      keypad/                     - AVR code for the keypad               
+             hardware/
+                     keypad/                      - KiCAD files for the keypad PCB
 
 You will additonally need luasec, luaposix and luasocket. But you can easily
 find these in your favourite distribution, or even the OpenWRT source tree.
