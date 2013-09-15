@@ -1,7 +1,9 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
 
 #include "io.h"
+#include "buzzer.h"
 
 IMPORT_IO(BUZZER);
 
@@ -35,4 +37,15 @@ void buzzer_stop(void)
 ISR(TIMER1_COMPA_vect)
 {
     IO_TOGGLE(BUZZER);
+}
+
+void buzzer_signal_boot(void)
+{
+    buzzer_start(TONE_LOW);
+    _delay_ms(100);
+    buzzer_start(TONE_MID);
+    _delay_ms(100);
+    buzzer_start(TONE_HIGH);
+    _delay_ms(100);
+    buzzer_stop();
 }

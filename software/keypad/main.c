@@ -35,19 +35,15 @@ int main (void)
     IO_SET_OUTPUT(LED_RED);
     IO_SET_OUTPUT(LED_GREEN);
 
-    IO_OUT(LED_GREEN, 1);
-    IO_OUT(LED_RED, 1);
-
     buzzer_init();
     sei();
 
-    buzzer_start(TONE_LOW);
-    _delay_ms(10);
-    buzzer_start(TONE_MID);
-    _delay_ms(10);
-    buzzer_start(TONE_HIGH);
-    _delay_ms(10);
-    buzzer_stop();
+    // Flash LEDs and buzz buzzer for debug
+    IO_OUT(LED_GREEN, 1);
+    IO_OUT(LED_RED, 1);
+    buzzer_signal_boot();
+    IO_OUT(LED_GREEN, 0);
+    IO_OUT(LED_RED, 0);
 
     for (;;) {}
     return 0;
