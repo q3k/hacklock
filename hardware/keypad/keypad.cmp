@@ -1,0 +1,150 @@
+Cmp-Mod V01 Created by CvPcb (2013-09-06 BZR 4312)-product date = Sat 14 Sep 2013 05:00:51 PM CEST
+
+BeginCmp
+TimeStamp = /52345D80;
+Reference = BZ1;
+ValeurCmp = BUZZER;
+IdModule  = pin_strip_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52345F13;
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52345968;
+Reference = C2;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5234597C;
+Reference = C3;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /523476D6;
+Reference = C4;
+ValeurCmp = 22p;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52347773;
+Reference = C5;
+ValeurCmp = 22p;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /523453C1;
+Reference = I1;
+ValeurCmp = ATMEGA8;
+IdModule  = lqfp32;
+EndCmp
+
+BeginCmp
+TimeStamp = /52346A13;
+Reference = J1;
+ValeurCmp = HEADER_6;
+IdModule  = pin_strip_6;
+EndCmp
+
+BeginCmp
+TimeStamp = /523469B0;
+Reference = J2;
+ValeurCmp = HEADER_6;
+IdModule  = pin_strip_6;
+EndCmp
+
+BeginCmp
+TimeStamp = /52347078;
+Reference = J3;
+ValeurCmp = ISP;
+IdModule  = pin_strip_3x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5234583B;
+Reference = J4;
+ValeurCmp = I2C;
+IdModule  = mors_4p;
+EndCmp
+
+BeginCmp
+TimeStamp = /52345AEA;
+Reference = LD1;
+ValeurCmp = GREEN;
+IdModule  = led_3mm_green;
+EndCmp
+
+BeginCmp
+TimeStamp = /52345B0B;
+Reference = LD2;
+ValeurCmp = RED;
+IdModule  = led_3mm_red;
+EndCmp
+
+BeginCmp
+TimeStamp = /52346CE6;
+Reference = R1;
+ValeurCmp = 40k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52346CDB;
+Reference = R2;
+ValeurCmp = 40k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5234744D;
+Reference = R3;
+ValeurCmp = 40k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5234618A;
+Reference = R4;
+ValeurCmp = 40k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52345C34;
+Reference = R5;
+ValeurCmp = 220;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52345C55;
+Reference = R6;
+ValeurCmp = 220;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52346178;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = smd_push;
+EndCmp
+
+BeginCmp
+TimeStamp = /523475ED;
+Reference = X1;
+ValeurCmp = CRYSTAL;
+IdModule  = crystal_hc-49s;
+EndCmp
+
+EndListe
