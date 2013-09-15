@@ -1,5 +1,5 @@
 PRG            = uart_hello
-OBJ            = main.o
+OBJ            = main.o buzzer.o
 PROGRAMMER     = buspirate
 PORT           = /dev/ttyACM0
 MCU_TARGET     = atmega8

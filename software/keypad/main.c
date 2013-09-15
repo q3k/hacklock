@@ -1,30 +1,14 @@
 #include <avr/io.h>
 #include <avr/wdt.h>
+#include <util/delay.h>
 #include <avr/interrupt.h>
+
+#include "io.h"
+#include "buzzer.h"
 
 /////////////////////
 // I/O ports setup //
 /////////////////////
-
-typedef struct
-{
-    volatile uint8_t *DDR;
-    volatile uint8_t *PORT;
-    volatile uint8_t *PIN;
-    uint8_t Bitmap;
-} TIOPort;
-
-#define DECLARE_IO(name, port, bit) TIOPort g_IO_##name = { &DDR##port, &PORT##port, &PIN##port, (1 << bit) }
-#define IO_SET_OUTPUT(name) do { *g_IO_##name.DDR |= g_IO_##name.Bitmap; } while(0)
-#define IO_SET_INPUT(name) do { *g_IO_##name.DDR &= ~g_IO_##name.Bitmap; } while(0)
-#define IO_INPUT_PULLUP(name) do { *g_IO_##name.PORT |= g_IO_##name.Bitmap; } while(0)
-
-#define IO_OUT(name, value) do { if (value) \
-        *g_IO_##name.PORT |= g_IO_##name.Bitmap; \
-    else \
-        *g_IO_##name.PORT &= ~g_IO_##name.Bitmap; } while(0)
-#define IO_TOGGLE(name) do { *g_IO_##name.PORT ^= g_IO_##name.Bitmap; } while(0)
-#define IO_IN(name) (*g_IO_##name.PIN & g_IO_##name.Bitmap)
 
 // Buzzer on PC2
 DECLARE_IO(BUZZER, C, 2);
@@ -53,6 +37,17 @@ int main (void)
 
     IO_OUT(LED_GREEN, 1);
     IO_OUT(LED_RED, 1);
+
+    buzzer_init();
+    sei();
+
+    buzzer_start(TONE_LOW);
+    _delay_ms(10);
+    buzzer_start(TONE_MID);
+    _delay_ms(10);
+    buzzer_start(TONE_HIGH);
+    _delay_ms(10);
+    buzzer_stop();
 
     for (;;) {}
     return 0;
