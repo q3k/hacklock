@@ -1,5 +1,5 @@
 PRG            = uart_hello
-OBJ            = main.o buzzer.o
+OBJ            = main.o buzzer.o keypad.o
 PROGRAMMER     = buspirate
 PORT           = /dev/ttyACM0
 MCU_TARGET     = atmega8
@@ -8,7 +8,7 @@ OPTIMIZE       = -Os
 DEFS           =
 LIBS           =
 
-HZ          = 2000000
+HZ          = 8000000
 
 # You should not have to change anything below here.
 
@@ -81,7 +81,7 @@ install:  $(PRG).hex
 
 fuse:
 	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) -P $(PORT) -v \
-	-U lfuse:w:0xc6:m -U hfuse:w:0xd9:m 	
+	-U lfuse:w:0xe4:m -U hfuse:w:0xd9:m 
 
 ddd: gdbinit
 	ddd --debugger "avr-gdb -x $(GDBINITFILE)"

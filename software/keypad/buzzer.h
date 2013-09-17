@@ -3,8 +3,8 @@
 
 void buzzer_init(void);
 
-#define TONE_LOW 8
-#define TONE_MID 4
-#define TONE_HIGH 2
+#define TONE_LOW 128
+#define TONE_MID 64
+#define TONE_HIGH 32
 
 #endif

@@ -22,7 +22,7 @@ void buzzer_start(uint16_t ticks)
     cli();
     TIMSK &= ~_BV(OCIE1A);
     OCR1A = ticks;
-    TIMSK = _BV(OCIE1A);
+    TIMSK |= _BV(OCIE1A);
     TCNT1 = 0;
     sei();
 }
@@ -42,10 +42,10 @@ ISR(TIMER1_COMPA_vect)
 void buzzer_signal_boot(void)
 {
     buzzer_start(TONE_LOW);
-    _delay_ms(100);
+    _delay_ms(200);
     buzzer_start(TONE_MID);
-    _delay_ms(100);
+    _delay_ms(200);
     buzzer_start(TONE_HIGH);
-    _delay_ms(100);
+    _delay_ms(200);
     buzzer_stop();
 }

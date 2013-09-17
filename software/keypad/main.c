@@ -5,6 +5,7 @@
 
 #include "io.h"
 #include "buzzer.h"
+#include "keypad.h"
 
 /////////////////////
 // I/O ports setup //
@@ -19,7 +20,7 @@ DECLARE_IO(LED_GREEN, C, 0);
 
 // Keypad
 DECLARE_IO(KPAD_COL3, D, 0);
-DECLARE_IO(KAPD_ROW3, D, 1);
+DECLARE_IO(KPAD_ROW3, D, 1);
 DECLARE_IO(KPAD_COMMON, D, 2);
 DECLARE_IO(KPAD_COL2, D, 3);
 DECLARE_IO(KPAD_ROW1, D, 4);
@@ -36,6 +37,7 @@ int main (void)
     IO_SET_OUTPUT(LED_GREEN);
 
     buzzer_init();
+    keypad_init();
     sei();
 
     // Flash LEDs and buzz buzzer for debug
